@@ -1,0 +1,5 @@
+{
+  "name": "Unity Qdrant Indexer Generator",
+  "description": "A dashboard to generate Unity Editor tools that index code and documentation into Qdrant using Gemini Embeddings.",
+  "requestFramePermissions": []
+}
