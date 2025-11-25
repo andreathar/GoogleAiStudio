@@ -1,6 +1,6 @@
 import React from 'react';
 import { GeneratorConfig } from '../utils/csharpGenerator';
-import { Settings, Database, Cpu } from 'lucide-react';
+import { Settings, Database, Cpu, Key } from 'lucide-react';
 
 interface Props {
   config: GeneratorConfig;
@@ -66,6 +66,21 @@ export const ConfigForm: React.FC<Props> = ({ config, onChange }) => {
           </div>
           
           <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1">Gemini API Key (for Unity)</label>
+              <div className="relative">
+                <input
+                  type="password"
+                  value={config.geminiApiKey}
+                  onChange={(e) => onChange('geminiApiKey', e.target.value)}
+                  className="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-blue-500 pl-9"
+                  placeholder="AIza..."
+                />
+                <Key className="w-4 h-4 text-gray-500 absolute left-3 top-2.5" />
+              </div>
+              <p className="text-xs text-gray-500 mt-1">This key will be embedded in the generated Unity script so it works immediately.</p>
+            </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-1">Gemini Model</label>
               <select

@@ -4,6 +4,7 @@ export interface GeneratorConfig {
   embeddingModel: string;
   distanceMetric: 'Cosine' | 'Euclid' | 'Dot';
   chunkSize: number;
+  geminiApiKey: string;
 }
 
 export const generateUnityScript = (config: GeneratorConfig): string => {
@@ -28,7 +29,7 @@ namespace UnityQdrantIndexer
     {
         private string qdrantUrl = "${config.qdrantUrl}";
         private string collectionName = "${config.collectionName}";
-        private string geminiApiKey = ""; // Set your API Key here or in the UI
+        private string geminiApiKey = "${config.geminiApiKey || ""}"; // Set via Generator
         private const string GEMINI_EMBED_URL = "https://generativelanguage.googleapis.com/v1beta/models/${config.embeddingModel}:embedContent";
         
         private bool isIndexing = false;

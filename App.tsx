@@ -11,7 +11,8 @@ const App: React.FC = () => {
     collectionName: 'unity_code_graph',
     embeddingModel: 'text-embedding-004',
     distanceMetric: 'Cosine',
-    chunkSize: 1000
+    chunkSize: 1000,
+    geminiApiKey: ''
   });
 
   const [activeTab, setActiveTab] = useState<'script' | 'docker'>('script');
